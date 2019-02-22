@@ -15,7 +15,9 @@
 # PLUGINS /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/|
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+	antigen bundle djui/alias-tips
 	antigen bundle git
+	antigen bundle skywind3000/z.lua
 	antigen bundle zsh-users/zsh-syntax-highlighting 
 	source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 	antigen apply
@@ -60,10 +62,15 @@
 
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-# ITERM SETUP /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/|
+# MISC SETUP \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/|
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 	source ~/.iterm2_shell_integration.zsh
+	export _ZL_MATCH_MODE=1
+	zstyle ':notify:*' error-icon "https://media3.giphy.com/media/10ECejNtM1GyRy/200_s.gif"
+	zstyle ':notify:*' error-title "wow such #fail"
+	zstyle ':notify:*' success-icon "https://s-media-cache-ak0.pinimg.com/564x/b5/5a/18/b55a1805f5650495a74202279036ecd2.jpg"
+	zstyle ':notify:*' success-title "very #success. wow"
 
 
 
@@ -80,6 +87,7 @@
 	alias gcm="git commit -m"
 	alias gs="git status"
 	alias vim='nvim'
+	alias zb='z -b'
 
 
 

@@ -10,6 +10,8 @@
 	set encoding=utf-8 " TODO
 	set splitbelow     " TODO
 	set splitright     " TODO
+	set ignorecase
+	set smartcase
 
 
 
@@ -34,7 +36,7 @@
 		Plugin 'vim-airline/vim-airline-themes'
 
 		" choose a theme!
-		let g:airline_theme='distinguished'
+		let g:airline_theme='bubblegum'
 	" -=- </AIRLINE> -=-
 
 
@@ -107,6 +109,7 @@
 
 	" -=- <NEOSNIPPET> -=-
 		" a nice snippet tool
+		Plugin 'Shougo/neosnippet'
 		Plugin 'Shougo/neosnippet-snippets'
 
 		" TODO
@@ -116,23 +119,25 @@
 
 	" -=- <MISC PLUGINS> -=-
 		Plugin 'HerringtonDarkholme/yats.vim'
-		Plugin 'Shougo/neosnippet'
 		Plugin 'Xuyuanp/nerdtree-git-plugin'
 		Plugin 'carlitux/deoplete-ternjs'
 		Plugin 'christoomey/vim-tmux-navigator'
 		Plugin 'mhartington/nvim-typescript'
 		Plugin 'mhinz/vim-grepper'
-		Plugin 'morhetz/gruvbox'
 		Plugin 'pangloss/vim-javascript'
 		Plugin 'roman/golden-ratio'
 		Plugin 'roxma/nvim-yarp'
 		Plugin 'roxma/vim-hug-neovim-rpc'
-		Plugin 'srcery-colors/srcery-vim'
 		Plugin 'styled-components/vim-styled-components'
-		Plugin 'terryma/vim-multiple-cursors'
 		Plugin 'ternjs/tern_for_vim'
+		Plugin 'terryma/vim-multiple-cursors'
+		Plugin 'tommcdo/vim-fubitive'
+		Plugin 'tpope/vim-fugitive'
+		Plugin 'tpope/vim-rhubarb'
 		Plugin 'tpope/vim-surround'
 		Plugin 'wokalski/autocomplete-flow'
+		Plugin 'airblade/vim-gitgutter'
+		Plugin 'scrooloose/nerdcommenter'
 	" -=- </MISC PLUGINS> -=-
 
 
@@ -159,6 +164,10 @@
 	set relativenumber                        " show relative line numbers
 	set ruler                                 " turn on the ruler at the bottom
 	syntax on                                 " turn on syntax highlight
+	hi Comment gui=italic cterm=italic
+	hi xmlAttrib gui=italic cterm=italic ctermfg=yellow
+	hi jsReturn gui=italic cterm=italic ctermfg=blue
+	hi jsClassKeyword gui=italic cterm=italic ctermfg=yellow
 
 
 
@@ -178,14 +187,17 @@
 	nmap <leader>co :copen<cr>
 	nmap <leader>d :TernDef<cr>
 	nmap <leader>f :cn<cr>zz
+	nmap <leader>g :GrepperGit 
 	nmap <leader>l :SyntasticToggle<cr>
 	nmap <leader>n :NERDTreeToggle<cr>
+	nmap <leader>ob :OpenBookmark 
 	nmap <leader>q :q<cr>
 	nmap <leader>rc :! yarn run flow coverage --color %<cr>
 	nmap <leader>rp :! yarn run flow coverage %<cr>
 	nmap <leader>w :w<cr>
 	nmap <leader>z :Goyo<cr>
 	nmap <silent> <C-g> <Plug>(ale_next_wrap)
+	nnoremap <leader>e :e ~/danmakenoise/vim/.vimrc<CR>
 
 
 
@@ -205,6 +217,3 @@
 	autocmd Filetype typescript       setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype typescript.tsx   setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype typescriptreact  setlocal ts=2 sw=2 sts=2 expandtab
-
-
-
