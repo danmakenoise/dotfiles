@@ -188,6 +188,7 @@
 	nmap <leader>d :TernDef<cr>
 	nmap <leader>f :cn<cr>zz
 	nmap <leader>g :GrepperGit 
+	nmap <leader>gs :call SynStack()<cr>
 	nmap <leader>l :SyntasticToggle<cr>
 	nmap <leader>n :NERDTreeToggle<cr>
 	nmap <leader>ob :OpenBookmark 
@@ -217,3 +218,14 @@
 	autocmd Filetype typescript       setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype typescript.tsx   setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype typescriptreact  setlocal ts=2 sw=2 sts=2 expandtab
+
+" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+" CUSTOM FUNCTIONS /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
+" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+	function! SynStack()
+		if !exists("*synstack")
+			return
+		endif
+		echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+	endfunc
