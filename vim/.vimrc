@@ -78,18 +78,6 @@
 	" -=- </NERDTREE> -=-
 
 
-	" -=- <VIM-JSX> -=-
-		" handy jsx syntax highlighting
-		Plugin 'mxw/vim-jsx'
-
-		" highlight flowtypes as well
-		let g:javascript_plugin_flow = 1
-
-		" highlight jsx regardless of file extension
-		let g:jsx_ext_required = 0
-	" -=- </VIM-JSX> -=-
-
-
 	" -=- <CTRL-P> -=-
 		Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -125,6 +113,7 @@
 		Plugin 'mhartington/nvim-typescript'
 		Plugin 'mhinz/vim-grepper'
 		Plugin 'pangloss/vim-javascript'
+    Plugin 'MaxMEllon/vim-jsx-pretty'
 		Plugin 'roman/golden-ratio'
 		Plugin 'roxma/nvim-yarp'
 		Plugin 'roxma/vim-hug-neovim-rpc'
@@ -164,10 +153,6 @@
 	set relativenumber                        " show relative line numbers
 	set ruler                                 " turn on the ruler at the bottom
 	syntax on                                 " turn on syntax highlight
-	hi Comment gui=italic cterm=italic
-	hi xmlAttrib gui=italic cterm=italic ctermfg=yellow
-	hi jsReturn gui=italic cterm=italic ctermfg=blue
-	hi jsClassKeyword gui=italic cterm=italic ctermfg=yellow
 
 
 
@@ -199,6 +184,7 @@
 	nmap <leader>z :Goyo<cr>
 	nmap <silent> <C-g> <Plug>(ale_next_wrap)
 	nnoremap <leader>e :e ~/danmakenoise/vim/.vimrc<CR>
+	nnoremap <leader>sv :source ~/.vimrc<CR>
 
 
 
@@ -218,6 +204,29 @@
 	autocmd Filetype typescript       setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype typescript.tsx   setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype typescriptreact  setlocal ts=2 sw=2 sts=2 expandtab
+
+
+
+" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+" COLOR THEME /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
+" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+	hi Comment gui=italic cterm=italic ctermfg=cyan
+	hi jsxAttrib gui=italic cterm=italic ctermfg=cyan
+	hi jsxEqual ctermfg=cyan
+
+	hi jsxString ctermfg=LightGreen
+	hi jsClassFuncName gui=italic cterm=italic ctermfg=DarkBlue
+	hi jsFuncCall gui=italic cterm=italic ctermfg=DarkBlue
+	hi jsClassProperty gui=italic cterm=italic ctermfg=DarkBlue
+
+	hi jsClassKeyword gui=italic cterm=italic ctermfg=yellow
+	hi jsBraces ctermfg=yellow
+
+	hi jsThis gui=italic cterm=italic ctermfg=red
+	hi jsxTagName gui=italic cterm=italic ctermfg=red
+
+
 
 " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " CUSTOM FUNCTIONS /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
