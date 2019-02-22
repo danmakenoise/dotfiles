@@ -55,6 +55,9 @@
 
 		" don't fix files when i save please.
 		let g:ale_fix_on_save = 0
+
+    let g:ale_javascript_eslint_executable='eslint_d'
+    let g:ale_javascript_eslint_use_global = 1
 	" -=- </ALE> -=-
 
 
@@ -127,6 +130,8 @@
 		Plugin 'wokalski/autocomplete-flow'
 		Plugin 'airblade/vim-gitgutter'
 		Plugin 'scrooloose/nerdcommenter'
+		let g:NERDSpaceDelims = 1
+    set completeopt-=preview
 	" -=- </MISC PLUGINS> -=-
 
 
@@ -168,7 +173,7 @@
 	:nnoremap gr :GrepperGit <cword> <CR>
 
 	nmap <leader>a :ALEFix<cr>
-	nmap <leader>cc :ccl<cr>
+	nmap <leader>cl :ccl<cr>
 	nmap <leader>co :copen<cr>
 	nmap <leader>d :TernDef<cr>
 	nmap <leader>f :cn<cr>zz
@@ -211,14 +216,16 @@
 " COLOR THEME /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
 " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-	hi Comment gui=italic cterm=italic ctermfg=cyan
+	hi Comment gui=italic cterm=italic ctermfg=grey
 	hi jsxAttrib gui=italic cterm=italic ctermfg=cyan
 	hi jsxEqual ctermfg=cyan
 
 	hi jsxString ctermfg=LightGreen
+	hi jsTemplateString ctermfg=LightGreen
 	hi jsClassFuncName gui=italic cterm=italic ctermfg=DarkBlue
 	hi jsFuncCall gui=italic cterm=italic ctermfg=DarkBlue
 	hi jsClassProperty gui=italic cterm=italic ctermfg=DarkBlue
+	hi jsxComponentName ctermfg=white
 
 	hi jsClassKeyword gui=italic cterm=italic ctermfg=yellow
 	hi jsBraces ctermfg=yellow
