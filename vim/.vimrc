@@ -173,11 +173,13 @@
 	:nnoremap gr :GrepperGit <cword> <CR>
 
 	nmap <leader>a :ALEFix<cr>
-	nmap <leader>cl :ccl<cr>
 	nmap <leader>co :copen<cr>
-	nmap <leader>d :TernDef<cr>
+	nmap <leader>cx :ccl<cr>
+	nmap <leader>d :TSDef<cr>
 	nmap <leader>f :cn<cr>zz
 	nmap <leader>g :GrepperGit 
+  nmap <leader>h :nohl<cr>
+  nmap <leader>i :TSImport<cr> 
 	nmap <leader>gs :call SynStack()<cr>
 	nmap <leader>l :SyntasticToggle<cr>
 	nmap <leader>n :NERDTreeToggle<cr>
@@ -185,6 +187,8 @@
 	nmap <leader>q :q<cr>
 	nmap <leader>rc :! yarn run flow coverage --color %<cr>
 	nmap <leader>rp :! yarn run flow coverage %<cr>
+	nmap <leader>t :TSType<cr>
+  nmap <leader>u :w<cr>:e!<cr>
 	nmap <leader>w :w<cr>
 	nmap <leader>z :Goyo<cr>
 	nmap <silent> <C-g> <Plug>(ale_next_wrap)
