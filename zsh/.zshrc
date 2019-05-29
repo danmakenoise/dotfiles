@@ -75,6 +75,7 @@
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 	alias cl='clear'
+	alias conflicts="git diff --name-only | uniq | xargs nvim"
 	alias dce='docker exec -it'
 	alias dcl='docker container ls'
 	alias dcs='docker-compose stop'
