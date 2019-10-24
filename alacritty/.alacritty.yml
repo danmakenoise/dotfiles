@@ -79,16 +79,16 @@ tabspaces: 8
 # Font configuration (changes require restart)
 font:
   normal:
-    family: Operator Mono Lig
-    style: Book
+    family: Victor Mono
+    style: Medium
 
   bold:
-    family: Operator Mono
-    #style: Bold
+    family: Victor Mono
+    style: Bold
 
   italic:
-    family: Operator Mono Lig
-    style: Book Italic
+    family: Victor Mono
+    style: Medium Italic
 
   # Point size
   size: 18.0
