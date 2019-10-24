@@ -61,14 +61,6 @@
 	" -=- </ALE> -=-
 
 
-	" -=- <GOYO> -=-
-		" a nice little zen mode plugin.
-		Plugin 'junegunn/goyo.vim'
-		let g:goyo_width = 80 " TODO
-		let g:goyo_linenr = 1 " TODO
-	" -=- </GOYO> -=-
-
-
 	" -=- <NERDTREE> -=-
 		" a very handy file navigator.
 		Plugin 'scrooloose/nerdtree'
@@ -98,28 +90,21 @@
 	" -=- </DEOPLETE> -=-
 
 
-	" -=- <NEOSNIPPET> -=-
-		" a nice snippet tool
-		Plugin 'Shougo/neosnippet'
-		Plugin 'Shougo/neosnippet-snippets'
-
-		" TODO
-		let g:neosnippet#enable_completed_snippet = 1
-	" -=- </NEOSNIPPER> -=-
-
-
 	" -=- <MISC PLUGINS> -=-
 		Plugin 'HerringtonDarkholme/yats.vim'
+		Plugin 'MaxMEllon/vim-jsx-pretty'
 		Plugin 'Xuyuanp/nerdtree-git-plugin'
+		Plugin 'airblade/vim-gitgutter'
 		Plugin 'carlitux/deoplete-ternjs'
 		Plugin 'christoomey/vim-tmux-navigator'
+		Plugin 'justinmk/vim-sneak'
 		Plugin 'mhartington/nvim-typescript'
 		Plugin 'mhinz/vim-grepper'
 		Plugin 'pangloss/vim-javascript'
-		Plugin 'MaxMEllon/vim-jsx-pretty'
 		Plugin 'roman/golden-ratio'
 		Plugin 'roxma/nvim-yarp'
 		Plugin 'roxma/vim-hug-neovim-rpc'
+		Plugin 'scrooloose/nerdcommenter'
 		Plugin 'styled-components/vim-styled-components'
 		Plugin 'ternjs/tern_for_vim'
 		Plugin 'terryma/vim-multiple-cursors'
@@ -127,10 +112,7 @@
 		Plugin 'tpope/vim-fugitive'
 		Plugin 'tpope/vim-rhubarb'
 		Plugin 'tpope/vim-surround'
-		Plugin 'wokalski/autocomplete-flow'
-		Plugin 'airblade/vim-gitgutter'
-		Plugin 'scrooloose/nerdcommenter'
-		Plugin 'justinmk/vim-sneak'
+
 		let g:NERDSpaceDelims = 1
 		let g:sneak#use_ic_scs = 1
 		set completeopt-=preview
