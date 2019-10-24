@@ -130,7 +130,9 @@
 		Plugin 'wokalski/autocomplete-flow'
 		Plugin 'airblade/vim-gitgutter'
 		Plugin 'scrooloose/nerdcommenter'
+		Plugin 'justinmk/vim-sneak'
 		let g:NERDSpaceDelims = 1
+		let g:sneak#use_ic_scs = 1
     set completeopt-=preview
 	" -=- </MISC PLUGINS> -=-
 
