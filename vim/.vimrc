@@ -56,8 +56,8 @@
 		" don't fix files when i save please.
 		let g:ale_fix_on_save = 0
 
-    let g:ale_javascript_eslint_executable='eslint_d'
-    let g:ale_javascript_eslint_use_global = 1
+		let g:ale_javascript_eslint_executable='eslint_d'
+		let g:ale_javascript_eslint_use_global = 1
 	" -=- </ALE> -=-
 
 
@@ -116,7 +116,7 @@
 		Plugin 'mhartington/nvim-typescript'
 		Plugin 'mhinz/vim-grepper'
 		Plugin 'pangloss/vim-javascript'
-    Plugin 'MaxMEllon/vim-jsx-pretty'
+		Plugin 'MaxMEllon/vim-jsx-pretty'
 		Plugin 'roman/golden-ratio'
 		Plugin 'roxma/nvim-yarp'
 		Plugin 'roxma/vim-hug-neovim-rpc'
@@ -133,7 +133,7 @@
 		Plugin 'justinmk/vim-sneak'
 		let g:NERDSpaceDelims = 1
 		let g:sneak#use_ic_scs = 1
-    set completeopt-=preview
+		set completeopt-=preview
 	" -=- </MISC PLUGINS> -=-
 
 
@@ -179,18 +179,18 @@
 	nmap <leader>cx :ccl<cr>
 	nmap <leader>d :TSDef<cr>
 	nmap <leader>f :cn<cr>zz
-	nmap <leader>g :GrepperGit 
-  nmap <leader>h :nohl<cr>
-  nmap <leader>i :TSImport<cr> 
+	nmap <leader>g :GrepperGit
+	nmap <leader>h :nohl<cr>
+	nmap <leader>i :TSImport<cr>
 	nmap <leader>gs :call SynStack()<cr>
 	nmap <leader>l :SyntasticToggle<cr>
 	nmap <leader>n :NERDTreeToggle<cr>
-	nmap <leader>ob :OpenBookmark 
+	nmap <leader>ob :OpenBookmark
 	nmap <leader>q :q<cr>
 	nmap <leader>rc :! yarn run flow coverage --color %<cr>
 	nmap <leader>rp :! yarn run flow coverage %<cr>
 	nmap <leader>t :TSType<cr>
-  nmap <leader>u :w<cr>:e!<cr>
+	nmap <leader>u :w<cr>:e!<cr>
 	nmap <leader>w :w<cr>
 	nmap <leader>z :Goyo<cr>
 	nmap <silent> <C-g> <Plug>(ale_next_wrap)
