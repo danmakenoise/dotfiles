@@ -83,8 +83,8 @@
 	alias gap="git add -p"
 	alias gcm="git commit -m"
 	alias gs="git status"
-	alias vim='nvim'
-	alias zb='z -b'
+	alias vim="nvim"
+	alias zb="z -b"
 
 
 
