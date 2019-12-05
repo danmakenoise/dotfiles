@@ -45,16 +45,13 @@
 		Plugin 'w0rp/ale'
 
 		" set up all the available linters i want to use.
-		let g:ale_linters = {'css': ['stylelint'], 'javascript': ['eslint', 'flow'], 'typescript': ['tslint'], 'typescript.tsx': ['tslint']}
+		let g:ale_linters = {'css': ['stylelint'], 'javascript': ['eslint', 'flow'], 'typescript': ['tslint'], 'typescriptreact': ['tslint']}
 
 		" set up all the available fixers i want to use.
-		let g:ale_fixers = {'css': ['stylelint'], 'javascript': ['eslint'], 'typescript': ['tslint'], 'typescript.tsx': ['tslint']}
+		let g:ale_fixers = {'css': ['stylelint'], 'javascript': ['eslint'], 'typescript': ['tslint'], 'typescriptreact': ['tslint']}
 
 		" TODO
 		let g:airline#extensions#ale#enabled = 1
-
-		" don't fix files when i save please.
-		let g:ale_fix_on_save = 0
 
 		let g:ale_javascript_eslint_executable='eslint_d'
 		let g:ale_javascript_eslint_use_global = 1
@@ -92,6 +89,7 @@
 
 	" -=- <MISC PLUGINS> -=-
 		Plugin 'HerringtonDarkholme/yats.vim'
+		Plugin 'styled-components/vim-styled-components'
 		Plugin 'MaxMEllon/vim-jsx-pretty'
 		Plugin 'Xuyuanp/nerdtree-git-plugin'
 		Plugin 'airblade/vim-gitgutter'
@@ -105,7 +103,6 @@
 		Plugin 'roxma/nvim-yarp'
 		Plugin 'roxma/vim-hug-neovim-rpc'
 		Plugin 'scrooloose/nerdcommenter'
-		Plugin 'styled-components/vim-styled-components'
 		Plugin 'ternjs/tern_for_vim'
 		Plugin 'terryma/vim-multiple-cursors'
 		Plugin 'tommcdo/vim-fubitive'
@@ -157,24 +154,22 @@
 	:nnoremap gr :GrepperGit <cword> <CR>
 
 	nmap <leader>a :ALEFix<cr>
+	nmap <leader>b :bd<cr>
 	nmap <leader>co :copen<cr>
 	nmap <leader>cx :ccl<cr>
 	nmap <leader>d :TSDef<cr>
-	nmap <leader>f :cn<cr>zz
-	nmap <leader>g :GrepperGit
+	nmap <leader>f :TSGetDiagnostics<cr>
+	nmap <leader>g :GrepperGit 
 	nmap <leader>h :nohl<cr>
 	nmap <leader>i :TSImport<cr>
-	nmap <leader>gs :call SynStack()<cr>
 	nmap <leader>l :SyntasticToggle<cr>
 	nmap <leader>n :NERDTreeToggle<cr>
-	nmap <leader>ob :OpenBookmark
+	nmap <leader>ob :OpenBookmark 
 	nmap <leader>q :q<cr>
-	nmap <leader>rc :! yarn run flow coverage --color %<cr>
-	nmap <leader>rp :! yarn run flow coverage %<cr>
+	nmap <leader>r :ALEReset<cr>
 	nmap <leader>t :TSType<cr>
 	nmap <leader>u :w<cr>:e!<cr>
 	nmap <leader>w :w<cr>
-	nmap <leader>z :Goyo<cr>
 	nmap <silent> <C-g> <Plug>(ale_next_wrap)
 	nnoremap <leader>e :e ~/danmakenoise/vim/.vimrc<CR>
 	nnoremap <leader>sv :source ~/.vimrc<CR>
@@ -193,8 +188,9 @@
 	autocmd Filetype javascript       setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype json             setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype php              setlocal ts=4 sw=4 sts=4 expandtab
+	autocmd Filetype yaml             setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype reason           setlocal ts=2 sw=2 sts=2 expandtab
-	autocmd Filetype typescript       setlocal ts=2 sw=2 sts=2 expandtab
+	autocmd Filetype typescript       setlocal ts=2 sw=2 sts=2 expandtab cindent smartindent autoindent
 	autocmd Filetype typescript.tsx   setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd Filetype typescriptreact  setlocal ts=2 sw=2 sts=2 expandtab
 
@@ -220,6 +216,8 @@
 
 	hi jsThis gui=italic cterm=italic ctermfg=red
 	hi jsxTagName gui=italic cterm=italic ctermfg=red
+
+	hi SpellBad ctermfg=black
 
 
 
